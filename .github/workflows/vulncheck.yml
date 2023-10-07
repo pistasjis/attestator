@@ -1,19 +1,12 @@
 on: [push, pull_request_target]
-name: Go Vulnerability Check
+name: Check for vulnerabilities using govulncheck
 jobs:
-  Security:
+  vulnerability-check:
     runs-on: ubuntu-latest
+    name: Run govulncheck
     steps:
-    - name: Install Go
-      uses: actions/setup-go@v3
-      with:
-        go-version: 'stable'
-    - name: Fetch Repository
-      uses: actions/checkout@v3
-    - name: Install Govulncheck
-      run: |
-          export GO111MODULE=on
-          export PATH=${PATH}:`go env GOPATH`/bin
-          go install golang.org/x/vuln/cmd/govulncheck@latest
-    - name: Run Govulncheck
-      run: "`go env GOPATH`/bin/govulncheck ./..."
+      - id: govulncheck
+        uses: golang/govulncheck-action@v1
+        with:
+          go-version-input: 1.21.0
+          go-package: ./...
