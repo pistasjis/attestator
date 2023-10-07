@@ -11,7 +11,7 @@ You can grab a binary from [Releases](/releases). Make sure to verify the checks
 Building the app is very, very simple. All you need on your system is [Go](https://go.dev) installed.
 
 > [!NOTE]
-> pistasjis Attestator does not currently work on Linux. Support will be added to the future.
+> pistasjis Attestator does not currently work on Linux or macOS. Support for Linux will be added to the future, Mac support is uncertain.
 
 Something like this should work:
 
