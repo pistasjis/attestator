@@ -6,6 +6,8 @@ jobs:
     steps:
     - name: Install Go
       uses: actions/setup-go@v3
+      with:
+        go-version: 'stable'
     - name: Fetch Repository
       uses: actions/checkout@v3
     - name: Install Govulncheck
