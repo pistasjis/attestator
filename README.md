@@ -16,9 +16,9 @@ Building the app is very, very simple. All you need on your system is [Go](https
 Something like this should work:
 
 ```
-    git clone https://github.com/pistasjis/attestator
-    cd attestator
-    go build .
+git clone https://github.com/pistasjis/attestator
+cd attestator
+go build .
 ```
 
 and you'll have a binary ready.
