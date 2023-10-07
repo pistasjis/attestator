@@ -5,10 +5,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"html/template"
+	"net/http"
 	"os"
 	"os/exec"
 	"runtime"
 	"strings"
+	"time"
 
 	"golang.org/x/sys/windows/registry"
 )
@@ -101,14 +103,19 @@ func main() {
 		go addToApps(key3, subkey3Name)
 	}
 
-	file, err := os.Open("apps.json")
+	var httpClient = &http.Client{Timeout: 10 * time.Second}
+
+	fmt.Println("Getting applications from database")
+
+	file, err := httpClient.Get("https://raw.githubusercontent.com/pistasjis/attestator/main/assets/apps.json")
 	if err != nil {
+		fmt.Println("Could not get JSON file")
 		panic(err)
 	}
-	defer file.Close()
+	defer file.Body.Close()
 
 	var appsJson []AppsJson
-	decoder := json.NewDecoder(file)
+	decoder := json.NewDecoder(file.Body)
 	if err := decoder.Decode(&appsJson); err != nil {
 		fmt.Println("Can't open json ", err)
 	}
