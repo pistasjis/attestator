@@ -1,0 +1,33 @@
+[
+    {
+        "displayName": "Firefox",
+        "reason": "Well-known Internet browser backed by an independent, non-profit organization with extra privacy features.",
+        "verdict": "good"
+    },
+    {
+        "displayName": "Brave",
+        "reason": "Privacy-focused browser with good defaults out of the box, ad-blocker and Tor/IPFS support.",
+        "verdict": "good"
+    },
+    {
+        "displayName": "Vivaldi",
+        "reason": "Made by a Norwegian company, with servers in Iceland (EEA). However, its UI is closed source and it has telemetry you can't disable. Other than that, it's pretty good.",
+        "verdict": "good"
+    },
+    {
+        "displayName": "Microsoft Edge",
+        "reason": "Loads of weird \"convenient\" features that send information back home to Microsoft, like the Shopping feature. However, Microsoft Edge also comes with features like third-party cookie blocking, which browsers like Chrome don't.",
+        "verdict": "meh"
+    },
+    {
+        "displayName": "Microsoft OneDrive",
+        "reason": "As with every cloud storage service, there is a chance the service operator is able to look through your things.",
+        "verdict": "meh"
+    },
+    {
+        "displayName": "Adobe Creative Cloud",
+        "reason": "Quite invasive, for example, by using Adobe you allow them to track you across websites and you waive your right to a class-action lawsuit.",
+        "verdict": "bad",
+        "source": "https://tosdr.org/en/service/417"
+    }
+]

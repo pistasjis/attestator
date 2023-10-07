@@ -1,0 +1,99 @@
+:root {
+    --background-color: #fff;
+    --box-color: #fef;
+    --color: #000;
+    --box-text-color: #000;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #101010;
+        --box-color: #202020;
+        --color: #fff;
+        --box-text-color: #000;
+    }
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--background-color);
+    color: var(--color);
+    transition: all .25s;
+}
+
+main {
+    margin: 0 24vw;
+}
+
+.box {
+    background-color: var(--box-color);
+    border-radius: 8px;
+    color: var(--box-text-color);
+    padding: 8px;
+}
+
+.info>p {
+    padding: 0px 0 5px 0;
+}
+
+.brand {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.brand>svg,
+.brand>h1 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#logo {
+    width: 3%;
+}
+
+.box>p {
+    margin: 10px 0 10px 0;
+}
+
+.box>h2 {
+    margin: 10px 0 10px 0;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.good {
+    background-color: #82ca9d;
+}
+
+.meh {
+    background-color: #fff79a;
+}
+
+.bad {
+    background-color: #f7977a;
+}
+
+a {
+    color: var(--color);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.download {
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 640px) {
+    main {
+        margin: 0 5vw;
+    }
+
+    #logo {
+        width: 6.4%;
+    }
+}
