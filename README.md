@@ -4,7 +4,7 @@
 
 ## Install
 
-You can grab a binary from [Releases](/releases). Make sure to verify the checksum before running.
+You can grab a binary from [Releases](https://github.com/pistasjis/attestator/releases). Make sure to verify the checksum before running.
 
 ## Build
 
