@@ -105,12 +105,16 @@ func main() {
 
 	var httpClient = &http.Client{Timeout: 10 * time.Second}
 
-	fmt.Println("Getting applications from database")
+	fmt.Println("\nGetting applications from database")
 
 	file, err := httpClient.Get("https://raw.githubusercontent.com/pistasjis/attestator/main/assets/apps.json")
 	if err != nil {
 		fmt.Println("Could not get JSON file")
 		panic(err)
+	}
+	if file.StatusCode != 200 {
+		fmt.Println("Error getting the JSON file, status code", file.StatusCode)
+		os.Exit(1)
 	}
 	defer file.Body.Close()
 
