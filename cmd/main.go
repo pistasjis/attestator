@@ -140,7 +140,7 @@ func RunAttestator(outputasjson bool) {
 		fmt.Printf("\ndone, saved at %s", vars.FileLocation)
 	} else {
 		exec.Command("cmd", "/c", "start", vars.JsonFileLocation).Run()
-		fmt.Printf("\ndone, saved at %s", vars.FileLocation)
+		fmt.Printf("\ndone, saved at %s", vars.JsonFileLocation)
 	}
 
 }
