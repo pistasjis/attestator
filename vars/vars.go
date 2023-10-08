@@ -1,4 +1,4 @@
-package main
+package vars
 
 import (
 	"embed"
@@ -25,7 +25,6 @@ type FinalResult struct {
 	Verdict     string
 }
 
-//go:embed results_template.html
 var Templates embed.FS
 
 var Apps = []App{}
@@ -34,8 +33,10 @@ var FinalResults = []FinalResult{}
 var CurrentTime = time.Now()
 var Path, _ = os.Getwd()
 
-// FIXME: We can't use this on Linux or macOS
-var directory_seperator = `\`
+// FIXME: We can't use this on Linux or macOS. Maybe we could make cmd.Execute() set the directory separator on program start based on opearing system?
+var directory_separator = `\`
 
 // TODO: Figure out if it's possible to make this less "jank"?
-var FileLocation = Path + directory_seperator + "attestation_" + CurrentTime.Format("2006-01-02_15.04.05") + ".html"
+var FileLocation = Path + directory_separator + "attestation_" + CurrentTime.Format("2006-01-02_15.04.05") + ".html"
+
+var JsonFileLocation = Path + directory_separator + "attestation_" + CurrentTime.Format("2006-01-02_15.04.05") + ".json"
