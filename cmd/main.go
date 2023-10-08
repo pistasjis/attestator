@@ -137,11 +137,12 @@ func RunAttestator(outputasjson bool) {
 	// open in browser. FIXME: once we add cross-platform support we need to add things like xdg-open etc
 	if !outputasjson {
 		exec.Command("cmd", "/c", "start", vars.FileLocation).Run()
+		fmt.Printf("\ndone, saved at %s", vars.FileLocation)
 	} else {
 		exec.Command("cmd", "/c", "start", vars.JsonFileLocation).Run()
+		fmt.Printf("\ndone, saved at %s", vars.FileLocation)
 	}
 
-	fmt.Printf("\ndone, saved at %s", vars.FileLocation)
 }
 
 // instead of repeating the code for adding each subkey, this function can be used inside of a for loop for each subkey inside of the three keys we have to loop through
