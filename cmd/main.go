@@ -35,6 +35,10 @@ func removeDuplicates(results []vars.FinalResult) []vars.FinalResult {
 func RunAttestator(outputasjson bool) {
 	fmt.Println("pistasjis Attestator running...")
 
+	if outputasjson {
+		vars.FileLocation = strings.Replace(vars.FileLocation, ".html", ".json", 1)
+	}
+
 	// TODO: DRY / make this code look better
 
 	// open 64-bits uninstall registry
@@ -135,13 +139,8 @@ func RunAttestator(outputasjson bool) {
 	}
 
 	// open in browser. FIXME: once we add cross-platform support we need to add things like xdg-open etc
-	if !outputasjson {
-		exec.Command("cmd", "/c", "start", vars.FileLocation).Run()
-		fmt.Printf("\ndone, saved at %s", vars.FileLocation)
-	} else {
-		exec.Command("cmd", "/c", "start", vars.JsonFileLocation).Run()
-		fmt.Printf("\ndone, saved at %s", vars.JsonFileLocation)
-	}
+	exec.Command("cmd", "/c", "start", vars.FileLocation).Run()
+	fmt.Printf("\ndone, saved at %s", vars.FileLocation)
 
 }
 
@@ -218,7 +217,7 @@ func createJSON() error {
 		return err
 	}
 
-	if err := os.WriteFile(vars.JsonFileLocation, json, 0644); err != nil {
+	if err := os.WriteFile(vars.FileLocation, json, 0644); err != nil {
 		fmt.Println("Could not create JSON file!")
 		return err
 	}

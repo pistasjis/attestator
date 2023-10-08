@@ -38,5 +38,3 @@ var directory_separator = `\`
 
 // TODO: Figure out if it's possible to make this less "jank"?
 var FileLocation = Path + directory_separator + "attestation_" + CurrentTime.Format("2006-01-02_15.04.05") + ".html"
-
-var JsonFileLocation = Path + directory_separator + "attestation_" + CurrentTime.Format("2006-01-02_15.04.05") + ".json"
