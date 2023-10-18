@@ -29,5 +29,10 @@
         "reason": "Quite invasive, for example, by using Adobe you allow them to track you across websites and you waive your right to a class-action lawsuit.",
         "verdict": "bad",
         "source": "https://tosdr.org/en/service/417"
+    },
+    {
+        "displayName": "WhatsApp",
+        "reason": "Owned by Meta/Facebook, closed-source and even Mark Zuckerberg doesn't use it. Try Signal or Element!",
+        "verdict": "bad"
     }
 ]
