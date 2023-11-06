@@ -3,7 +3,7 @@ module github.com/pistasjis/attestator
 go 1.21.0
 
 require (
-	github.com/spf13/cobra v1.7.0
+	github.com/spf13/cobra v1.8.0
 	golang.org/x/sys v0.13.0
 )
 
